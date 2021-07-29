@@ -42,7 +42,7 @@ const Header = ({menu}) => {
 
             <MenuItem disabled>Yeni Toplu Mesaj</MenuItem>
 
-            <MenuDivider />
+            <MenuDivider/>
 
             <MenuItem
               onPress={() => {
