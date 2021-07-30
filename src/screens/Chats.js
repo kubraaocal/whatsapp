@@ -3,6 +3,7 @@ import React from 'react'
 import { StyleSheet, Text, View,ScrollView,FlatList,Dimensions} from 'react-native'
 import Button from '../components/Button'
 import Card from "../components/Card"
+import Header from '../components/Header'
 
 const DATA = [
     {
@@ -56,6 +57,8 @@ const Chats = ( {navigation} ) => {
 
 
     return (
+        <>
+        <Header navigation={navigation} />
         <View style={styles.container}>
             <ScrollView>
                 <FlatList
@@ -66,6 +69,7 @@ const Chats = ( {navigation} ) => {
                 />
             </ScrollView>
         </View>
+        </>
     )
 }
 

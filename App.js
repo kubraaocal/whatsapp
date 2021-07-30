@@ -13,11 +13,75 @@ import CameraPage from './src/screens/CameraPage';
 import History from './src/screens/History';
 import Calls from './src/screens/Calls';
 import ImagePage from './src/screens/ImagePage';
-import MenuTop from './src/screens/MenuTop';
-// import MenuTop from './src/screens/MenuTop';
+import Settings from './src/screens/Settings';
+import Profile from './src/screens/Profile';
+import PersonProfile from './src/screens/PersonProfile';
 
 const Tab = createMaterialTopTabNavigator();
 const Stack = createStackNavigator();
+
+const ChatStack=()=>{
+  return(
+    <Stack.Navigator>
+          <Stack.Screen
+          name="Chats"
+          component={Chats}
+          options={{
+            headerShown: false,
+            headerTitle:props => <Header {...props}/>
+          }}
+        />
+    </Stack.Navigator>
+
+  )
+}
+
+const CameraStack=()=>{
+  return(
+    <Stack.Navigator>
+          <Stack.Screen
+          name="Camera"
+          component={Camera}
+          options={{
+            headerShown: false,
+            headerTitle:props => <Header {...props}/>
+          }}
+        />
+    </Stack.Navigator>
+
+  )
+}
+
+const HistoryStack=()=>{
+  return(
+    <Stack.Navigator>
+          <Stack.Screen
+          name="History"
+          component={History}
+          options={{
+            headerShown: false,
+            headerTitle:props => <Header {...props}/>
+          }}
+        />
+    </Stack.Navigator>
+
+  )
+}
+const CallsStack=()=>{
+  return(
+    <Stack.Navigator>
+          <Stack.Screen
+          name="Calls"
+          component={Calls}
+          options={{
+            headerShown: false,
+            headerTitle:props => <Header {...props}/>
+          }}
+        />
+    </Stack.Navigator>
+
+  )
+}
 
 const TopTapStack = () => {
   function generateIcon(route, focused) {
@@ -49,7 +113,7 @@ const TopTapStack = () => {
           width: 100,
         },
       }}
-      initialRouteName="Chats">
+      initialRouteName="ChatStack">
       <Tab.Screen
         name=" "
         component={Camera}
@@ -57,26 +121,24 @@ const TopTapStack = () => {
           tabBarIcon: ({focused}) => generateIcon(route, focused),
         })}
       />
-      <Tab.Screen name="Chats" component={Chats} />
-      <Tab.Screen name="History" component={History} />
-      <Tab.Screen name="Calls" component={Calls} />
+      <Tab.Screen name="ChatStack" component={ChatStack} />
+      <Tab.Screen name="HistoryStack" component={HistoryStack} />
+      <Tab.Screen name="CallsStack" component={CallsStack} />
     </Tab.Navigator>
   );
 };
 
 const App = ({navigation}) => {
-  const yolla = () => {
-    navigation.navigate('MenuTop');
-  }; 
+ 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <Stack.Navigator>
         <Stack.Screen
           name="TopTapStack"
           component={TopTapStack}
           options={{
             headerShown: true,
-            headerTitle: props => <Header {...props} menu={yolla} />,
+            headerTitle:(props)=> <Header navigation={navigation}/>
           }}
         />
         <Stack.Screen
@@ -86,7 +148,9 @@ const App = ({navigation}) => {
         />
         <Stack.Screen name="CameraPage" component={CameraPage} />
         <Stack.Screen name="ImagePage" component={ImagePage} />
-        <Stack.Screen name="MenuTop" component={MenuTop} />
+        <Stack.Screen name="Ayarlar" component={Settings} />
+        <Stack.Screen name="Profile" options={{headerStyle:{backgroundColor:"green"},headerTintColor:"white"}} component={Profile} />
+        <Stack.Screen name="PersonProfile" options={{headerShown: false}} component={PersonProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

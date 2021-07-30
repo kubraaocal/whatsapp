@@ -6,7 +6,6 @@ import {
   Dimensions,
   TouchableOpacity,
   Image,
-  FlatList,
   TextInput,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -14,12 +13,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-import Button from '../components/Button';
 
 const Message = ({navigation, route}) => {
   const data = route.params;
 
-  console.log("sdasd",data);
 
   return (
     <View style={{flex: 1}}>
@@ -35,7 +32,9 @@ const Message = ({navigation, route}) => {
             <Icon style={styles.back_icon} name="arrow-back" />
             <Image style={styles.image} source={data.image} />
           </TouchableOpacity>
-          <Text style={styles.title}>{data.nickname}</Text>
+          <TouchableOpacity onPress={()=>navigation.navigate('PersonProfile')}>
+            <Text style={styles.title}>{data.nickname}</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.header2}>
           <TouchableOpacity>
@@ -55,7 +54,7 @@ const Message = ({navigation, route}) => {
       </View>
       <View
         style={{
-          height: windowHeight / 1.175,
+          height: windowHeight / 1.25,
         }}></View>
       <View
         style={{

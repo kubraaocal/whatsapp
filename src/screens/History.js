@@ -11,7 +11,7 @@ import {
   Modal,
 } from 'react-native';
 
-import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const windowWidth = Dimensions.get('screen').width;
 const windowHeight = Dimensions.get('screen').height;
@@ -32,9 +32,9 @@ const History = ({navigation}) => {
             resizeMode="cover"
             source={require('../assests/1.jpg')}
             style={{
-              borderRadius: 50,
-              height: windowHeight / 11,
-              width: windowWidth / 5,
+              borderRadius: 80/2,
+              height: 80,
+              width: 80,
             }}
           />
           <TouchableOpacity
@@ -71,9 +71,9 @@ const History = ({navigation}) => {
                 resizeMode="cover"
                 source={require('../assests/2.jpg')}
                 style={{
-                  borderRadius: 50,
-                  height: windowHeight / 11,
-                  width: windowWidth / 5,
+                  borderRadius: 80/2,
+                  height: 80,
+                  width: 80
                 }}
               />
               <View style={styles.view_text}>

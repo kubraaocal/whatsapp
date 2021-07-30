@@ -39,9 +39,9 @@ const Card = ({navigation, item}) => {
               resizeMode="cover"
               source={item.image}
               style={{
-                borderRadius: 50,
-                height: windowHeight / 11,
-                width: windowWidth / 5,
+                borderRadius: 40,
+                height: 80,
+                width: 80,
               }}></Image>
           </View>
         </TouchableOpacity>
