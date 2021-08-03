@@ -14,7 +14,7 @@ import Menu, {MenuItem, MenuDivider} from 'react-native-material-menu';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
-const Header = ({menu}) => {
+const Header = ({navigation}) => {
   let _menu = null
   return (
     <View style={styles.container}>
@@ -58,7 +58,7 @@ const Header = ({menu}) => {
             </MenuItem>
             <MenuItem
               onPress={() => {
-                Alert.alert('PopUp Menu Button Clicked...');
+                navigation.navigate('Ayarlar')
               }}>
               Ayarlar
             </MenuItem>

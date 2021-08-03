@@ -19,10 +19,6 @@ const windowHeight = Dimensions.get('screen').height;
 const History = ({navigation}) => {
   const [isModalVisible, setisModalVisible] = useState(false);
 
-  const changeModalVisible = ({navigation}) => {
-    setisModalVisible(!isModalVisible);
-    console.log('aaa', isModalVisible);
-  };
 
   return (
     <View style={styles.container}>

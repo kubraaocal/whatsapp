@@ -32,7 +32,7 @@ const Message = ({navigation, route}) => {
             <Icon style={styles.back_icon} name="arrow-back" />
             <Image style={styles.image} source={data.image} />
           </TouchableOpacity>
-          <TouchableOpacity onPress={()=>navigation.navigate('PersonProfile')}>
+          <TouchableOpacity onPress={()=>navigation.navigate('PersonProfile',{image:data.image,nickname:data.nickname})}>
             <Text style={styles.title}>{data.nickname}</Text>
           </TouchableOpacity>
         </View>
